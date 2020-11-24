@@ -73,8 +73,8 @@ function useUser() {
   return context
 }
 const updateUser = (dispatch, user, updates) => {
-  dispatch({type: 'start update', updates: updates})
-  userClient.updateUser(user, updates).then(
+  dispatch({type: 'start update', updates})
+  return userClient.updateUser(user, updates).then(
     updatedUser => dispatch({type: 'finish update', updatedUser}),
     error => dispatch({type: 'fail update', error}),
   )

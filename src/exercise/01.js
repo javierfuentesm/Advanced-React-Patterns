@@ -80,7 +80,7 @@ const updateUser = (dispatch, user, updates) => {
   )
 }
 
-//export {UserProvider, useUser}
+//export {UserProvider, useUser, updateUser}
 
 // src/screens/user-profile.js
 // import {UserProvider, useUser} from './context/user-context'

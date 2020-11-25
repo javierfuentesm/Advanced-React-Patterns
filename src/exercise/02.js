@@ -9,7 +9,6 @@ function Toggle(props) {
   const toggle = () => setOn(!on)
 
   return React.Children.map(props.children, (child, index) => {
-    console.log(child)
     return React.cloneElement(child, {
       on,
       toggle,

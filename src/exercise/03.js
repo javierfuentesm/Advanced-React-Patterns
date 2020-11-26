@@ -13,6 +13,7 @@ import {Switch} from '../switch'
 // 🐨 create your ToggleContext context here
 // 📜 https://reactjs.org/docs/context.html#reactcreatecontext
 const ToggleContext = createContext()
+ToggleContext.displayName = 'Toggle Context'
 
 function Toggle({children}) {
   const [on, setOn] = useState(false)

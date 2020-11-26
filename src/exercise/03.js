@@ -40,7 +40,7 @@ function ToggleOff({children}) {
   return on ? null : children
 }
 
-function ToggleButton({...props}) {
+function ToggleButton(props) {
   const {on, toggle} = useContext(ToggleContext)
   return <Switch on={on} onClick={toggle} {...props} />
 }

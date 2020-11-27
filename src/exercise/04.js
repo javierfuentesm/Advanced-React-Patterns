@@ -11,7 +11,7 @@ function useToggle() {
   const getTogglerProps = props => {
     return {...togglerProps, ...props}
   }
-  return {on, getTogglerProps}
+  return {on, toggle, getTogglerProps}
 }
 
 function App() {

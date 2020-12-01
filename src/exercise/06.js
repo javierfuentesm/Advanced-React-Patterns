@@ -3,6 +3,7 @@
 
 import * as React from 'react'
 import {Switch} from '../switch'
+import warning from 'warning'
 
 const callAll = (...fns) => (...args) => fns.forEach(fn => fn?.(...args))
 
@@ -35,6 +36,12 @@ function useToggle({
   const [state, dispatch] = React.useReducer(reducer, initialState)
   const onIsControlled = controlledOn != null
   const on = onIsControlled ? controlledOn : state.on
+  React.useEffect(() => {
+    warning(
+      controlledOn && !onChange,
+      'Warning: Failed prop type: You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.\n',
+    )
+  }, [controlledOn, onChange])
 
   function dispatchWithOnChange(action) {
     if (!onIsControlled) {
